@@ -1,0 +1,2276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The House of Designer</title>
+
+<style>
+:root {
+    --green: #163c2a;
+    --green-light: #245b42;
+    --gold: #c59b5b;
+    --cream: #faf7f1;
+    --white: #ffffff;
+    --text: #222;
+    --muted: #777;
+    --border: #e8e4dc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text);
+    background: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* TOP BAR */
+
+.topbar {
+    background: var(--green);
+    color: white;
+    text-align: center;
+    padding: 9px;
+    font-size: 13px;
+}
+
+/* NAVBAR */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: white;
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--green);
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.icon-btn {
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: white;
+
+    font-size: 18px;
+}
+
+.cart-count {
+    background: var(--gold);
+    color: white;
+
+    padding: 2px 6px;
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    position: absolute;
+    margin-top: -8px;
+}
+
+/* HERO */
+
+.hero {
+    background: linear-gradient(
+        120deg,
+        #f5f1e8,
+        #ffffff
+    );
+
+    min-height: 620px;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+
+    align-items: center;
+}
+
+.small-title {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    color: var(--green);
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: 1.05;
+
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: var(--muted);
+
+    font-size: 17px;
+
+    max-width: 550px;
+
+    margin-bottom: 28px;
+}
+
+.btn {
+    padding: 13px 22px;
+
+    border-radius: 7px;
+
+    border: none;
+
+    font-weight: bold;
+
+    display: inline-block;
+}
+
+.primary-btn {
+    background: var(--green);
+    color: white;
+}
+
+.primary-btn:hover {
+    background: var(--green-light);
+}
+
+.secondary-btn {
+    background: white;
+    border: 1px solid var(--border);
+
+    margin-left: 8px;
+}
+
+.hero-image {
+    height: 500px;
+
+    border-radius: 18px;
+
+    background-image:
+        url(
+        "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1000&q=85"
+        );
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+}
+
+.hero-card {
+    position: absolute;
+
+    bottom: 25px;
+    left: 25px;
+
+    background: white;
+
+    padding: 15px 20px;
+
+    border-radius: 10px;
+}
+
+.hero-card strong {
+    display: block;
+    color: var(--green);
+}
+
+/* SECTIONS */
+
+section {
+    padding: 80px 0;
+}
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-family: Georgia, serif;
+
+    color: var(--green);
+
+    font-size: 40px;
+
+    margin-bottom: 8px;
+}
+
+.section-title p {
+    color: var(--muted);
+}
+
+/* CATEGORIES */
+
+.categories {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.category {
+    height: 250px;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.category::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.7)
+        );
+}
+
+.category-content {
+    position: absolute;
+
+    bottom: 20px;
+    left: 20px;
+
+    color: white;
+
+    z-index: 2;
+}
+
+.category-content h3 {
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+}
+
+/* PRODUCTS */
+
+.products-section {
+    background: #fafaf8;
+}
+
+.products {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+}
+
+.product {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition: .3s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.1);
+}
+
+.product-image {
+    height: 300px;
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+}
+
+.product-tag {
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+
+    background: white;
+
+    color: var(--green);
+
+    padding: 5px 9px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+.product-info {
+    padding: 17px;
+}
+
+.product-info h3 {
+    margin-bottom: 5px;
+}
+
+.stars {
+    color: var(--gold);
+}
+
+.price {
+    color: var(--green);
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin: 8px 0 12px;
+}
+
+.add-cart {
+    width: 100%;
+
+    padding: 11px;
+
+    background: var(--green);
+
+    color: white;
+
+    border: none;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+}
+
+/* AI SECTION */
+
+.ai-section {
+    background: var(--green);
+
+    color: white;
+}
+
+.ai-container {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 50px;
+
+    align-items: center;
+}
+
+.ai-section h2 {
+    font-family: Georgia, serif;
+
+    font-size: 43px;
+
+    margin-bottom: 15px;
+}
+
+.ai-section p {
+    color: #d7e2db;
+
+    margin-bottom: 25px;
+}
+
+.ai-features {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 15px;
+}
+
+.ai-feature {
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    padding: 18px;
+
+    border-radius: 10px;
+}
+
+.ai-feature strong {
+    display: block;
+
+    margin-bottom: 5px;
+}
+
+/* CHAT */
+
+.chat-demo {
+    background: white;
+
+    color: #222;
+
+    padding: 22px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.2);
+}
+
+.message {
+    padding: 12px;
+
+    border-radius: 12px;
+
+    margin: 10px 0;
+
+    max-width: 80%;
+
+    font-size: 14px;
+}
+
+.bot-message {
+    background: #eef2ee;
+}
+
+.user-message {
+    background: var(--green);
+
+    color: white;
+
+    margin-left: auto;
+}
+
+.chat-input {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 15px;
+}
+
+.chat-input input {
+    flex: 1;
+
+    padding: 11px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 7px;
+}
+
+/* OFFER */
+
+.offer {
+    background: var(--cream);
+}
+
+.offer-box {
+    background: var(--green);
+
+    color: white;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    padding: 55px;
+}
+
+.offer-box h2 {
+    font-family: Georgia, serif;
+
+    font-size: 42px;
+
+    margin-bottom: 10px;
+}
+
+.offer-box p {
+    color: #dce5df;
+
+    margin-bottom: 20px;
+}
+
+/* REVIEWS */
+
+.reviews {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.review {
+    border:
+        1px solid
+        var(--border);
+
+    padding: 25px;
+
+    border-radius: 12px;
+}
+
+.review p {
+    color: var(--muted);
+
+    margin: 13px 0;
+}
+
+/* NEWSLETTER */
+
+.newsletter {
+    background: #f5f1e8;
+}
+
+.newsletter-content {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+.newsletter h2 {
+    font-family: Georgia, serif;
+
+    color: var(--green);
+
+    font-size: 32px;
+}
+
+.subscribe {
+    display: flex;
+
+    gap: 8px;
+}
+
+.subscribe input {
+    width: 280px;
+
+    padding: 13px;
+
+    border:
+        1px solid
+        #ddd;
+
+    border-radius: 7px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #102b1e;
+
+    color: #d7e2db;
+
+    padding: 55px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr 1fr;
+
+    gap: 35px;
+}
+
+footer h3,
+footer h4 {
+    color: white;
+
+    margin-bottom: 14px;
+}
+
+footer p,
+footer a {
+    color: #b9c8bf;
+
+    font-size: 14px;
+
+    margin: 7px 0;
+}
+
+.copyright {
+    border-top:
+        1px solid
+        rgba(255,255,255,.1);
+
+    margin-top: 35px;
+
+    padding-top: 18px;
+
+    text-align: center;
+
+    font-size: 12px;
+}
+
+/* CHAT BUTTON */
+
+.chat-button {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    color: white;
+
+    border: none;
+
+    font-size: 24px;
+
+    z-index: 200;
+}
+
+/* CHAT WINDOW */
+
+.chat-window {
+    position: fixed;
+
+    right: 22px;
+    bottom: 90px;
+
+    width: 350px;
+
+    background: white;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 15px 50px
+        rgba(0,0,0,.25);
+
+    display: none;
+
+    z-index: 199;
+
+    overflow: hidden;
+}
+
+.chat-window.active {
+    display: block;
+}
+
+.chat-header {
+    background: var(--green);
+
+    color: white;
+
+    padding: 16px;
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.chat-body {
+    height: 320px;
+
+    padding: 15px;
+
+    overflow-y: auto;
+}
+
+/* CART */
+
+.cart {
+    position: fixed;
+
+    right: -420px;
+
+    top: 0;
+
+    width: 390px;
+
+    max-width: 90%;
+
+    height: 100vh;
+
+    background: white;
+
+    z-index: 300;
+
+    padding: 25px;
+
+    box-shadow:
+        -10px 0 40px
+        rgba(0,0,0,.2);
+
+    transition: .3s;
+}
+
+.cart.active {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.cart-item {
+    display: flex;
+
+    gap: 12px;
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+    padding: 12px 0;
+}
+
+.cart-item img {
+    width: 65px;
+    height: 75px;
+
+    object-fit: cover;
+
+    border-radius: 7px;
+}
+
+.cart-total {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 25px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero-container,
+    .ai-container {
+        grid-template-columns: 1fr;
+    }
+
+    .categories,
+    .products {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .reviews {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 550px) {
+
+    .categories,
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero-image {
+        height: 350px;
+    }
+
+    .ai-features {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-content {
+        display: block;
+    }
+
+    .subscribe {
+        margin-top: 20px;
+        display: block;
+    }
+
+    .subscribe input {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .subscribe button {
+        width: 100%;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chat-window {
+        width: 90%;
+        right: 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+    ✨ New Season Collection — Free Shipping on Orders Above ₹999
+</div>
+
+
+<!-- NAVIGATION -->
+
+<header>
+
+<div class="navbar">
+
+<a href="#" class="logo">
+    The House <span>of</span> Designer
+</a>
+
+<nav class="nav-links">
+
+<a href="#home">Home</a>
+
+<a href="#shop">Shop</a>
+
+<a href="#categories">Categories</a>
+
+<a href="#ai">AI Stylist</a>
+
+<a href="#offers">Offers</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+<div class="nav-icons">
+
+<button class="icon-btn">
+    🔍
+</button>
+
+<button
+class="icon-btn"
+onclick="openCart()">
+
+    🛍
+    <span
+    class="cart-count"
+    id="cartCount">
+    0
+    </span>
+
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section
+class="hero"
+id="home">
+
+<div class="hero-container">
+
+<div>
+
+<div class="small-title">
+    AI-Powered Fashion Shopping
+</div>
+
+<h1>
+    Style that feels uniquely yours.
+</h1>
+
+<p>
+Discover fashionable clothing with personalized
+recommendations, smart product search,
+size guidance and instant AI shopping assistance.
+</p>
+
+<a
+href="#shop"
+class="btn primary-btn">
+
+Shop Collection
+
+</a>
+
+<a
+href="#ai"
+class="btn secondary-btn">
+
+Meet AI Stylist
+
+</a>
+
+</div>
+
+
+<div class="hero-image">
+
+<div class="hero-card">
+
+<strong>
+    Personalized for you
+</strong>
+
+<span>
+    AI recommendations • Easy shopping
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section id="categories">
+
+<div class="container">
+
+<div class="section-title">
+
+<div class="small-title">
+    Explore
+</div>
+
+<h2>
+    Shop by Category
+</h2>
+
+<p>
+Find your next favorite look.
+</p>
+
+</div>
+
+
+<div class="categories">
+
+
+<div
+class="category"
+style="
+background-image:url(
+'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=80'
+);
+">
+
+<div class="category-content">
+
+<h3>Women</h3>
+
+<p>Explore Collection →</p>
+
+</div>
+
+</div>
+
+
+<div
+class="category"
+style="
+background-image:url(
+'https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=700&q=80'
+);
+">
+
+<div class="category-content">
+
+<h3>Men</h3>
+
+<p>Explore Collection →</p>
+
+</div>
+
+</div>
+
+
+<div
+class="category"
+style="
+background-image:url(
+'https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=700&q=80'
+);
+">
+
+<div class="category-content">
+
+<h3>New Arrivals</h3>
+
+<p>Explore Collection →</p>
+
+</div>
+
+</div>
+
+
+<div
+class="category"
+style="
+background-image:url(
+'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=80'
+);
+">
+
+<div class="category-content">
+
+<h3>Trending</h3>
+
+<p>Explore Collection →</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section
+class="products-section"
+id="shop">
+
+<div class="container">
+
+<div class="section-title">
+
+<div class="small-title">
+    Curated For You
+</div>
+
+<h2>
+    Featured Collection
+</h2>
+
+<p>
+Modern essentials selected for every style.
+</p>
+
+</div>
+
+
+<div class="products">
+
+
+<!-- PRODUCT 1 -->
+
+<div class="product">
+
+<div
+class="product-image"
+style="
+background-image:url(
+'https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=700&q=80'
+);
+">
+
+<div class="product-tag">
+NEW
+</div>
+
+</div>
+
+
+<div class="product-info">
+
+<h3>
+Elegant Beige Dress
+</h3>
+
+<div class="stars">
+★★★★★
+</div>
+
+<div class="price">
+₹1,499
+</div>
+
+<button
+class="add-cart"
+onclick="
+addToCart(
+'Elegant Beige Dress',
+1499,
+'https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=200&q=70'
+)
+">
+
+Add to Cart
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 2 -->
+
+<div class="product">
+
+<div
+class="product-image"
+style="
+background-image:url(
+'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=700&q=80'
+);
+">
+
+<div class="product-tag">
+BESTSELLER
+</div>
+
+</div>
+
+
+<div class="product-info">
+
+<h3>
+Classic Linen Shirt
+</h3>
+
+<div class="stars">
+★★★★★
+</div>
+
+<div class="price">
+₹999
+</div>
+
+<button
+class="add-cart"
+onclick="
+addToCart(
+'Classic Linen Shirt',
+999,
+'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=200&q=70'
+)
+">
+
+Add to Cart
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 3 -->
+
+<div class="product">
+
+<div
+class="product-image"
+style="
+background-image:url(
+'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=700&q=80'
+);
+">
+
+<div class="product-tag">
+TRENDING
+</div>
+
+</div>
+
+
+<div class="product-info">
+
+<h3>
+Modern Blue Jeans
+</h3>
+
+<div class="stars">
+★★★★☆
+</div>
+
+<div class="price">
+₹1,299
+</div>
+
+<button
+class="add-cart"
+onclick="
+addToCart(
+'Modern Blue Jeans',
+1299,
+'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=200&q=70'
+)
+">
+
+Add to Cart
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 4 -->
+
+<div class="product">
+
+<div
+class="product-image"
+style="
+background-image:url(
+'https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=700&q=80'
+);
+">
+
+<div class="product-tag">
+SALE
+</div>
+
+</div>
+
+
+<div class="product-info">
+
+<h3>
+Designer Casual Set
+</h3>
+
+<div class="stars">
+★★★★★
+</div>
+
+<div class="price">
+₹1,799
+</div>
+
+<button
+class="add-cart"
+onclick="
+addToCart(
+'Designer Casual Set',
+1799,
+'https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=200&q=70'
+)
+">
+
+Add to Cart
+
+</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- AI SECTION -->
+
+<section
+class="ai-section"
+id="ai">
+
+<div class="container ai-container">
+
+<div>
+
+<div class="small-title">
+Your Personal Fashion Assistant
+</div>
+
+<h2>
+Meet Your AI Stylist
+</h2>
+
+<p>
+Not sure what to wear?
+Ask our AI shopping assistant.
+Get product suggestions,
+style ideas, size guidance and
+instant answers while you shop.
+</p>
+
+
+<div class="ai-features">
+
+
+<div class="ai-feature">
+
+<strong>
+🔎 Smart Search
+</strong>
+
+<span>
+Find products using natural language.
+</span>
+
+</div>
+
+
+<div class="ai-feature">
+
+<strong>
+✨ Personal Recommendations
+</strong>
+
+<span>
+Discover styles that match your needs.
+</span>
+
+</div>
+
+
+<div class="ai-feature">
+
+<strong>
+📏 Size Guidance
+</strong>
+
+<span>
+Get help choosing the right size.
+</span>
+
+</div>
+
+
+<div class="ai-feature">
+
+<strong>
+💬 Instant Support
+</strong>
+
+<span>
+Ask questions anytime.
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="chat-demo">
+
+<strong>
+AI Fashion Assistant
+</strong>
+
+
+<div class="message bot-message">
+
+Hi! 👋
+
+What are you looking for today?
+
+</div>
+
+
+<div class="message user-message">
+
+I need an outfit for a casual party.
+
+</div>
+
+
+<div class="message bot-message">
+
+Great choice! I recommend our
+Designer Casual Set.
+Would you like to see similar styles?
+
+</div>
+
+
+<div class="chat-input">
+
+<input
+id="demoInput"
+placeholder="Ask your style question..."
+>
+
+<button
+class="btn primary-btn"
+onclick="demoAI()">
+
+Send
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- OFFER -->
+
+<section
+class="offer"
+id="offers">
+
+<div class="container">
+
+<div class="offer-box">
+
+<div class="small-title">
+Limited Time
+</div>
+
+<h2>
+Get 20% Off Your First Order
+</h2>
+
+<p>
+Discover your style and enjoy a special welcome offer.
+</p>
+
+<a
+href="#shop"
+class="btn"
+style="
+background:white;
+color:#163c2a;
+">
+
+Shop Now
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- REVIEWS -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<div class="small-title">
+Happy Shoppers
+</div>
+
+<h2>
+What Customers Say
+</h2>
+
+</div>
+
+
+<div class="reviews">
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+“The AI recommendation made it so easy
+to find an outfit. I didn't have to search
+for hours.”
+</p>
+
+<strong>
+— Priya, Fashion Shopper
+</strong>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+“I loved getting quick answers about
+sizes and product details through
+the chatbot.”
+</p>
+
+<strong>
+— Ananya, Customer
+</strong>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+“Simple, modern and convenient.
+The personalized suggestions are
+my favorite feature.”
+</p>
+
+<strong>
+— Riya, Customer
+</strong>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- NEWSLETTER -->
+
+<section class="newsletter">
+
+<div class="container newsletter-content">
+
+<div>
+
+<div class="small-title">
+Stay Stylish
+</div>
+
+<h2>
+Get New Arrivals & Style Updates
+</h2>
+
+</div>
+
+
+<div class="subscribe">
+
+<input
+type="email"
+placeholder="Your email address"
+>
+
+<button
+class="btn primary-btn"
+onclick="subscribe()">
+
+Subscribe
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+<div class="container">
+
+<div class="footer-grid">
+
+
+<div>
+
+<h3>
+The House of Designer
+</h3>
+
+<p>
+An AI-powered smart fashion shopping
+platform designed to make clothing
+discovery simple, personalized and
+convenient.
+</p>
+
+</div>
+
+
+<div>
+
+<h4>
+Shop
+</h4>
+
+<a href="#shop">
+Women
+</a>
+
+<a href="#shop">
+Men
+</a>
+
+<a href="#shop">
+New Arrivals
+</a>
+
+<a href="#offers">
+Offers
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Support
+</h4>
+
+<a href="#ai">
+AI Stylist
+</a>
+
+<a href="#">
+Size Guide
+</a>
+
+<a href="#">
+Shipping
+</a>
+
+<a href="#">
+Returns
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Contact
+</h4>
+
+<p>
+Email:
+hello@houseofdesigner.com
+</p>
+
+<p>
+Phone:
++91 98765 43210
+</p>
+
+<p>
+India
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 The House of Designer.
+All rights reserved.
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- AI CHAT BUTTON -->
+
+<button
+class="chat-button"
+onclick="toggleChat()">
+
+💬
+
+</button>
+
+
+<!-- AI CHAT WINDOW -->
+
+<div
+class="chat-window"
+id="chatWindow">
+
+<div class="chat-header">
+
+<span>
+AI Fashion Assistant
+</span>
+
+<button
+onclick="toggleChat()"
+style="
+background:none;
+border:none;
+color:white;
+font-size:20px;
+">
+
+×
+
+</button>
+
+</div>
+
+
+<div
+class="chat-body"
+id="chatBody">
+
+<div class="message bot-message">
+
+Hello! 👋
+
+I'm your AI fashion assistant.
+
+Tell me what you want to wear.
+
+</div>
+
+</div>
+
+
+<div
+style="
+padding:12px;
+display:flex;
+gap:7px;
+border-top:1px solid #eee;
+">
+
+<input
+id="chatInput"
+style="
+flex:1;
+padding:10px;
+border:1px solid #ddd;
+border-radius:7px;
+"
+placeholder="Type your question..."
+onkeydown="
+if(event.key==='Enter') sendChat()
+"
+>
+
+<button
+class="btn primary-btn"
+onclick="sendChat()">
+
+Send
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- SHOPPING CART -->
+
+<div
+class="cart"
+id="cart">
+
+<div class="cart-header">
+
+<h2>
+Shopping Cart
+</h2>
+
+<button
+class="icon-btn"
+onclick="closeCart()">
+
+×
+
+</button>
+
+</div>
+
+
+<div id="cartItems">
+
+<p style="color:#777">
+Your cart is empty.
+</p>
+
+</div>
+
+
+<div class="cart-total">
+
+<span>
+Total
+</span>
+
+<span id="cartTotal">
+₹0
+</span>
+
+</div>
+
+
+<button
+class="btn primary-btn"
+style="
+width:100%;
+margin-top:20px;
+"
+onclick="checkout()">
+
+Proceed to Checkout
+
+</button>
+
+</div>
+
+
+<script>
+
+let cart = [];
+
+
+/* ADD PRODUCT */
+
+function addToCart(name, price, image) {
+
+cart.push({
+    name: name,
+    price: price,
+    image: image
+});
+
+updateCart();
+
+openCart();
+
+}
+
+
+/* UPDATE CART */
+
+function updateCart() {
+
+document.getElementById("cartCount")
+.innerText = cart.length;
+
+
+let container =
+document.getElementById("cartItems");
+
+
+if(cart.length === 0) {
+
+container.innerHTML =
+`
+<p style="color:#777">
+Your cart is empty.
+</p>
+`;
+
+document.getElementById("cartTotal")
+.innerText = "₹0";
+
+return;
+
+}
+
+
+container.innerHTML = "";
+
+
+cart.forEach((item,index) => {
+
+container.innerHTML += `
+
+<div class="cart-item">
+
+<img
+src="${item.image}"
+>
+
+<div>
+
+<strong>
+${item.name}
+</strong>
+
+<p style="color:#163c2a;font-weight:bold">
+₹${item.price.toLocaleString()}
+</p>
+
+<button
+onclick="removeItem(${index})"
+style="
+border:none;
+background:none;
+color:#a33;
+font-size:12px;
+">
+
+Remove
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+
+let total = cart.reduce(
+(sum,item) => sum + item.price,
+0
+);
+
+document.getElementById("cartTotal")
+.innerText =
+"₹" + total.toLocaleString();
+
+}
+
+
+/* REMOVE ITEM */
+
+function removeItem(index) {
+
+cart.splice(index,1);
+
+updateCart();
+
+}
+
+
+/* OPEN CART */
+
+function openCart() {
+
+document.getElementById("cart")
+.classList.add("active");
+
+}
+
+
+/* CLOSE CART */
+
+function closeCart() {
+
+document.getElementById("cart")
+.classList.remove("active");
+
+}
+
+
+/* CHAT */
+
+function toggleChat() {
+
+document.getElementById("chatWindow")
+.classList.toggle("active");
+
+}
+
+
+/* CHAT RESPONSE */
+
+function sendChat() {
+
+let input =
+document.getElementById("chatInput");
+
+let text =
+input.value.trim();
+
+if(text === "") return;
+
+
+let body =
+document.getElementById("chatBody");
+
+
+body.innerHTML += `
+
+<div class="message user-message">
+
+${text}
+
+</div>
+
+`;
+
+
+let response =
+"";
+
+if(
+text.toLowerCase().includes("dress")
+||
+text.toLowerCase().includes("party")
+) {
+
+response =
+"For a party look, I recommend our Elegant Beige Dress or Designer Casual Set.";
+
+}
+
+else if(
+text.toLowerCase().includes("shirt")
+||
+text.toLowerCase().includes("men")
+) {
+
+response =
+"Our Classic Linen Shirt is a great smart-casual choice.";
+
+}
+
+else if(
+text.toLowerCase().includes("size")
+) {
+
+response =
+"We provide size guidance to help you choose the best fit.";
+
+}
+
+else {
+
+response =
+"I recommend checking our Featured Collection. I can help you choose a product, style or size.";
+
+}
+
+
+body.innerHTML += `
+
+<div class="message bot-message">
+
+${response}
+
+</div>
+
+`;
+
+
+input.value = "";
+
+body.scrollTop =
+body.scrollHeight;
+
+}
+
+
+/* DEMO AI */
+
+function demoAI() {
+
+let input =
+document.getElementById("demoInput");
+
+if(input.value.trim() !== "") {
+
+alert(
+"AI Stylist: Based on your request, I recommend checking our Featured Collection!"
+);
+
+input.value = "";
+
+}
+
+}
+
+
+/* SUBSCRIBE */
+
+function subscribe() {
+
+alert(
+"Thank you! You are subscribed to our style updates."
+);
+
+}
+
+
+/* CHECKOUT */
+
+function checkout() {
+
+if(cart.length === 0) {
+
+alert(
+"Your cart is empty."
+);
+
+} else {
+
+alert(
+"Demo checkout: Your order is ready for checkout."
+);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
